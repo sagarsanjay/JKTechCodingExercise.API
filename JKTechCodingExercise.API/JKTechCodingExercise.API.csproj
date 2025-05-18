@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>aspnet-JKTechCodingExercise.API-eaae73e1-4be6-4235-aec4-152bfdb57860</UserSecretsId>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.11" NoWarn="NU1605"/>
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="8.0.11" NoWarn="NU1605"/>
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.16" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.5" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.5" />
+        <PackageReference Include="Microsoft.Identity.Web" Version="3.2.0"/>
+        <PackageReference Include="Microsoft.Identity.Web.DownstreamApi" Version="3.2.0"/>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\JKTechCodingExercise.Infrastructure\JKTechCodingExercise.Infrastructure.csproj" />
+    </ItemGroup>
+
+</Project>
