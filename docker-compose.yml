@@ -1,0 +1,6 @@
+﻿services:
+  jktechcodingexercise.api:
+    image: jktechcodingexercise.api
+    build:
+      context: .
+      dockerfile: JKTechCodingExercise.API/Dockerfile

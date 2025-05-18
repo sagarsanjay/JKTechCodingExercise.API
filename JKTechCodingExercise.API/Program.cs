@@ -12,11 +12,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<JKTechDBContext>(options =>
 {
-    options.UseSqlServer("");
+    var conString = builder.Configuration.GetConnectionString("Database");
+    options.UseSqlServer(conString);
 });
 
 builder.Services.AddHttpClient();
-
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IDocumentRepository, DocumentRepository>();
 builder.Services.AddScoped<IIngestionTaskRepository, IngestionTaskRepository>();

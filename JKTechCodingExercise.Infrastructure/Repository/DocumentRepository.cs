@@ -7,11 +7,15 @@ namespace JKTechCodingExercise.Infrastructure.Repository;
 
 public class DocumentRepository : Repository<Document>, IDocumentRepository
 {
-    public DocumentRepository(JKTechDBContext context) : base(context) { }
+    private readonly JKTechDBContext _context;
+    public DocumentRepository(JKTechDBContext context) : base(context)
+    {
+        _context = context;
+    }
 
     public async Task<IEnumerable<Document>> GetByUserAsync(string username)
     {
-        return await _context.Set<Document>()
+        return await _context.Documents
             .Where(d => d.UploadedBy == username)
             .ToListAsync();
     }

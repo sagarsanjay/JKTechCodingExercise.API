@@ -7,6 +7,7 @@ public class JKTechDBContext : DbContext
 {
     public JKTechDBContext(DbContextOptions<JKTechDBContext> options) : base(options) {}
     
+    public DbSet<Document> Documents { get; set; }
     public DbSet<IngestionTask> IngestionTasks { get; set; }
 
 }
